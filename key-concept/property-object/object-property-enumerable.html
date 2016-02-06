@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Using the Enumerable Attribute</title>
+    <script type="text/javascript" charset="utf-8">
+      var cat = {
+        name: {first: 'Fluffy', last: 'Art'},
+        color: "white"
+      };
+      Object.defineProperty(cat, 'name', {enumerable: false})
+      for (var prop in cat) {
+        console.log(Object.keys(cat)  + ' : ' + cat[prop]);
+      }
+
+      //display the key property
+      console.log(Object.keys(cat));//display color but not name
+
+      //Notice if I'm setialize my cat object to JSON that I can 
+        //get the whole object with {enumerable: true} only
+      console.log(JSON.stringify(cat));
+      
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

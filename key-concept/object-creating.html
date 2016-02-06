@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Object-Oriented JavaScript</title>
+    <script type="text/javascript" charset="utf-8">
+    'use strict';
+    
+    //object literal
+    var cat = {name: 'Fluffy', color: 'White'};
+    cat.age = 3;
+    cat.speak = function() {
+      return 'mmeeoooow'; 
+    };
+    console.log(cat.age);
+    console.log(cat.name);
+    console.log(cat.speak());
+    
+    //object constructor
+    function Dog(name, color) {
+      this.name = (name == '') ? 'Xav' : name;
+      this.color = (color == '') ? 'red' : color;
+    }
+    var o = new Dog('Joann', 'dd');
+    console.log(o);
+
+    //object Create
+    var snake = Object.create(Object.prototype,
+    {
+      name : {
+        value: 'Alex', 
+        enumerable: true,
+        writable: true,
+        configurable: true
+      },
+      color : {
+        value: 'dark', 
+        enumerable: true,
+        writable: true,
+        configurable: true
+      }
+    }
+   );
+   
+   //object ECMAscript 6
+   class Mouse {
+     constructor(name, color) {
+       this.name = name;
+       this.color = color;
+     }
+     run(){
+       return 'fast';
+       
+     }
+   }
+   var mouse = new Mouse('ratatouille', 'green');
+   console.log(mouse );
+   console.log(mouse.run() );
+    
+
+
+    </script>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

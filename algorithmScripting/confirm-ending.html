@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Confirm the Ending</title>
+    <script type="text/javascript" charset="utf-8">
+      function end(str, target) {
+        var letter=[], i, j,k, letterEnd, count, splitOneWord=[], splitWords=[], total;
+
+        //test number of word
+        if (str.match(/\s/g) !== null) {
+          // words /+/
+          splitWords = str.split(' ').reverse();
+          for (j = 0, len = splitWords.length; j < len; j++) {
+            splitOneWord = splitWords[0];
+          }
+          console.log(splitOneWord );
+          if (splitOneWord.length > 1) {
+            console.log('>1');
+            console.log(letterEnd = splitOneWord.slice(-2));
+            console.log(target = target.slice(-2));
+            console.log(letterEnd + ':' + target);
+            if (letterEnd === target) {
+              console.log(1);
+              total = true;
+            } else {
+              console.log(0);
+              total = false;
+            }
+            
+          } else if(splitOneWord.length === 1){
+            console.log('===1');
+            console.log(letterEnd = splitOneWord.slice(-1));
+            console.log(letterEnd + ':' + target);
+            if (letterEnd === target) {
+              console.log(1);
+              total = true;
+            } else {
+              console.log(0);
+              total = false;
+            }
+          }
+        }else{
+          //1 word
+          //split the word without slice
+          console.log(splitOneWord = str.split(''));
+          //return - 1 to the arr
+          count = str.length -1; 
+
+          for ( i = 0; i < str.length; i++) {
+            console.log(letter = str[i]);
+            if (i === count) {
+              console.log(count + ':' + i);
+              if (target === str[count]) {
+                console.log(str[count]);
+                total = true;
+              } else {
+                console.log(str[count]);
+                total = false;
+              }
+            }
+          }
+        }
+        return total;
+      }
+
+      //end("He has to give me a new name", "name");
+end("Walking on water and developing software from a specification are easy " + 
+    "if both are frozen", "specificatifn")
+
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

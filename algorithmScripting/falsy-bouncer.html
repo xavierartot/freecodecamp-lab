@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Falsy Bouncer</title>
+    <script type="text/javascript" charset="utf-8">
+      function bouncer(arr) {
+        // Don't show a false ID to this bouncer.
+        var b, c, tab=[];
+        function filterByIndicw(arr) {
+          b = Boolean(arr);
+          if (b.valueOf() === true) {
+            console.log(true + ' : ' + arr);
+            return tab.push(arr);
+          }
+        }
+        arr.filter(filterByIndicw);
+        console.log(tab);
+
+        return tab;
+      }
+      bouncer([7, "ate", "", false, 9]) //should return [7, "ate", 9].
+      bouncer(["a", "b", "c"]) //should return ["a", "b", "c"].
+      bouncer([false, null, 0, NaN, undefined, ""]) //should return [].
+    </script>
+    </head>
+  <body>
+    body
+  </body>
+</html>

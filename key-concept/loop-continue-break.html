@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>test</title>
+    <script type="text/javascript" charset="utf-8">
+      var i, j;
+      //create a label
+      // I assign a label 'boucle1'
+      //boucle1 : for (var i = 0; i < 3; i++) {
+        //console.log('i: ' + i);
+        //boucle2 : for (var j = 0; j < 4; j++) {
+          //console.log('j: ' + j + ' i: ' + i);
+        //}
+      //}
+
+      //stop a loop...
+      boucle3 : for (var k = 0; k < 3; k++) {
+        //console.log('boucle3 k = ' + k);
+        boucle4 : for (var l= 0; l < 5; l++) {
+          if (k === 1 && l === 2) {
+            //console.log('stop this loop here');
+            //break;
+            //but we can stop an another loop
+            //console.log('stop boucle3');
+            //break boucle3;
+          }
+          //console.log('boucle4 l = ' + l);
+        }
+      }
+
+      boucle5 : for (var m = 0; m < 5; m++) {
+        console.log(' m = ' + m);
+        boucle6 : for (var z = 0; z < 3; z++) {
+          if (m === 1) {
+            //console.log('z = ' +z);
+            //ignore this case 
+            //et reprend l'iteration suivante 
+            //sans continuer a iterer le code dans cette boucle boucle5
+            console.log('z = ' + z);
+            console.log('z = ' + (z = 30));
+            //continue;
+            //meme chose on continue le code en ignorant la boucle boucle6
+            continue boucle5;
+          }
+        }
+      }
+
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html> 

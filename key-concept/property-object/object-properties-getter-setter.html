@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Using Getters and Setters</title>
+    <script type="text/javascript" charset="utf-8">
+    //getter and setter are pretty cool
+    'use strict';
+      var cat = {
+        name: {first: 'Fluffy', last: 'Art'},
+        color: "white"
+      };
+      
+      Object.defineProperty(
+        cat,
+        'fullName',
+        {
+          get : function cat_fullName_getter() {
+            return this.name.first + ' ' + this.name.last;
+            // getter code
+          },
+          set : function cat_fullName_setter(value) {
+            var nameParts = value.split(' ');// cut the value in an array
+            this.name.first = nameParts[0]
+            this.name.last = nameParts[1]
+            // setter code
+          },
+          writeable    : true,
+          enumerable   : true,
+          configurable : true
+        }
+      );
+      console.log(cat.fullName);
+      cat.fullName = 'xavier artot'
+      console.log(cat.fullName);
+      console.log(cat.name.first + cat.name.last);
+      
+      
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Repeat a string repeat a string</title>
+    <script type="text/javascript" charset="utf-8">
+      function repeat(str, num) {
+        // repeat after me
+        var i=1, strTime='';
+        if (num === 1) {
+          console.log(1);
+          i = str;
+          console.log(i);
+        } else if(num > 1){
+          console.log('>1');
+          for (var j = 0, len = num; j < len; j++) {
+            strTime += str;
+          }
+          console.log(i = strTime);
+        }else if(num < 1){
+          console.log('<1');
+          str = '';
+          i = str;
+        }
+
+        return i;
+      }
+
+      repeat("abc", 4);
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

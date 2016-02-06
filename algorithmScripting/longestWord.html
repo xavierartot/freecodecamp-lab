@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Find the Longest Word in a String</title>
+    <script type="text/javascript" charset="utf-8">
+    function findLongestWord(str) {
+      var word=[], i, j, arrayCount=[];
+      console.log(str.split(' '));
+      word = str.split(' ');
+      for ( i = 0, len = word.length; i < len; i++) {
+        //console.log(word[i].length);
+        arrayCount.push(word[i].length);
+        //console.log(arrayCount );
+         
+      }
+      console.log(arrayCount.sort());
+      console.log(arrayCount.sort(function(a, b){return b-a}));
+
+      console.log(arrayCount.shift());
+
+      //return arrayCount.pop();
+    }
+
+    //findLongestWord("The quick brown fox jumped over the lazy dog");
+    findLongestWord("What if we try a super-long word such as otorhinolaryngology");
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

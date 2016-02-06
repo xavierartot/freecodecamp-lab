@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title></title>
+    <script type="text/javascript" charset="utf-8">
+    
+    function factorialize(num) {
+      var f=[0], j=1, count=1, result=0;
+
+      for (var i = 0, len = num; i <= len; i++) {
+          if (i <= num && i !== 0 ) {
+            //console.log(i , j);
+            f.push(count = count*j);
+          }
+          j++;
+        }
+      //console.log(f);
+      f.pop();
+      //console.log(f);
+      result = f.lastIndexOf(num);
+      result = (num === 0)?1:f.pop();
+      console.log(result );
+      return result;     
+    }
+    factorialize(5);
+
+
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

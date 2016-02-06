@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>closure</title>
+    <script type="text/javascript" charset="utf-8">
+      
+      var a = ["elem1", "elem2", "elem3", "elem4", "elem5"], z;
+      z = function() {
+        console.log('toto');
+      }
+      for (var j = 0; j < 5; j++) {
+        (function () {
+          console.log(a[j]);
+        }(z));
+      }
+      
+      var r = 10, s=80;
+      (function (argument) {
+        console.log('s = ' + s + ' r= '+ (argument += 5));
+      }(r)); //on passe r en argument de la function au moment de sont execution
+      console.log('r: ' + r); // r reste a 10
+
+      //anonyme function 
+// On profite de tous les avantages des fonctions, on peut donc passer des arguments
+      ( function(arg1) {
+        arg1 += 2;
+        console.log("arg1 vaut : " + arg1); // affiche "arg1 vaut : 82"
+        function xav(test) {
+          console.log((30));
+        };
+        return xav;
+      } ) (2);
+      console.log("s vaut : " + s); // affiche "b vaut : 80"
+
+
+      //**************  voyont voir une closure simple
+
+      function MaFonction(nombre) {
+        function Ajouter(valeur) {
+          // La variable "nombre" est accessible dans cette fonction, car "nombre"
+          // a été définie en dehors de la fonction Ajouter
+          return nombre + valeur;
+        }
+        // Comme on l'a vu, Ajouter est une variable, j'ai donc le droit de la rendre en
+        // tant que résultat de la fonction
+        return Ajouter;
+      }
+
+      var a = MaFonction(10);
+      console.log(a);
+      // La variable "a" contient désormais la fonction "Ajouter: et retourne "Ajouter". 
+      console.log(a + ' // MaFonction retourne Ajouter;'); 
+      // Donc, "a" est désormais une fonction dans laquelle la variable "nombre" 
+      // existe encore.
+
+      console.log(( a(2) )); // Affiche "12";
+
+
+      var b = ['a', 'b', 'c'];
+      for(var i = 0; i < 3; i++) {
+        window.setTimeout(
+          /* Argument 1 : Fonction à lancer après le délai */
+          ( function(arg1) {
+            // "arg1" prendra la valeur de "i" lors d'un tour de boucle.
+            // Cette valeur devient indépendante de "i" et n'est plus 
+            // soumise au fonctionnement de la boucle
+
+            // On retourne la fonction à exécuter à la fin du délai défini dans
+            // "setTimeout"
+            console.log( b[arg1] + ' var i: ' + (i) + ' arg1: ' + arg1);
+            return function() {
+              // Lorsque cette fonction s'exécutera, "arg1" contiendra
+              // toujours la valeur qui lui a été transmise et n'aura pas
+              // été modifié
+              
+              console.log( b[arg1] + ' var i: ' + (i) + ' arg1: ' + arg1);
+            };
+          } ) ( i ), // on passe en argument le compteur de la boucle
+          //[> Argument 2 : Délai en milisecondes avant de lancer la fonction <]
+          1000
+        );
+
+      }
+
+
+
+
+
+
+
+
+      var c = ["elem1b", "elem2b", "elem3b", "elem4b", "elem5b"];
+       console.log(b); 
+        for(var k = 0; k < 3; k++) {
+          window.setTimeout(
+            //[> Argument 1 : Fonction à lancer après le délai <]
+            function() { console.log(c[k]) },
+            //[> Argument 2 : Délai en millisecondes avant de lancer la fonction <]
+            1000
+          );
+        }
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

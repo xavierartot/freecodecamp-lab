@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Object Properties</title>
+    <script type="text/javascript" charset="utf-8">
+    'use strict';
+     
+      var cat = {
+        name: 'Xav', 
+        color: 'red'
+      };
+      cat['Xavier Artot'] = 'ddddd';
+      console.log(cat);
+
+      //print out the proprity descriptor for our name property
+      console.log(
+        Object.getOwnPropertyDescriptor(cat, 'name')
+      );
+
+      //let's make the value writeable to "false"
+      Object.defineProperty(cat, 'name', {writable: false});
+      //and display in the console
+      console.log(
+        Object.getOwnPropertyDescriptor(cat, 'name')
+      );
+      //if I try to update the property 'name' I have an error only in 'use strict' mode
+      //but the property is not update
+      //cat.name = 'Olive';
+
+      //Let's see with multi dimensionnal object
+      var dog = {
+        name: {first: 'fluf', last: 'Lebout'}, 
+        color: "orange"
+      };
+      Object.defineProperty(dog, 'name', {writable: false});
+      dog.name.last = 'Artot';
+      //we can change the value
+      console.log(dog.name.last );
+
+      //to prevent this problem we can 'freeze' the property
+      //now I'm getting an error, the entire name object is now 'read-only'
+      Object.defineProperty(dog, 'name', {writable: false});
+      Object.freeze(dog.name);
+      dog.name.last = 'Artot';
+      console.log(dog.name);
+      
+
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

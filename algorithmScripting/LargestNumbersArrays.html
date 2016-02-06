@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Largest Numbers in Arrays</title>
+    <script type="text/javascript" charset="utf-8">
+      function largestOfFour(arr) {
+        var subArr=[], i, firstArr=[];
+
+        for (i = 0, len = arr.length; i < len; i++) {
+          subArr=arr[i];
+            subArr
+            .sort(function(a, b) {
+              return b - a;
+            });
+          firstArr.push(subArr[0]);
+          console.log(firstArr );
+        }
+        return firstArr;
+      }
+
+      largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], 
+                    [1000, 1001, 857, 1]]);
+
+      </script>
+    </head>
+  <body>
+  </body>
+</html>

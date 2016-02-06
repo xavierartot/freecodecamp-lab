@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>check for palindromes</title>
+    <script type="text/javascript" charset="utf-8">
+      function palindrome(str) {
+        //var
+        var strLowerCase='', read='' , readToLeft='', readToRight='' , remove, j=0;
+
+        read = str.toLowerCase();
+        read = read.replace(/[-?!.;,(:)_\n\t\r\s]+/g, '');
+
+        console.log(read);
+        //console.log(read.length);
+
+        //read order left to right
+        for (var i = 0, len = read.length; i < len; i++) {
+          //console.log(read[i]+' : left' + ' ' + i);
+          if (read[i] !== 'undefined') {
+            readToRight += read[i];
+            //console.log(readToRight );
+          }
+        }
+        //read order right to left 
+        for (j = read.length-1;  j >= 0; j--) {
+          //console.log(read[j]+' right' + ' ' + j);
+          if (read[i] !== 'undefined') {
+            readToLeft += read[j];
+            //console.log(readToLeft );
+          }
+        }
+        if (readToLeft === readToRight) {
+         console.log(readToRight + ' : ' + readToRight );
+          return true;
+        } else {
+          console.log(2);
+          return false;
+        }
+        
+      }
+
+      palindrome("0_0 (: /-\ :) 0-0");
+      //palindrome("A man, a plan, a canal: Panama");
+      //palindrome("1 eye for of 1 eye.");
+
+      // French / English
+      // mon nom == my name
+      // Elu par cette crapule
+      // Eh ! ca va la vache
+      
+      // English
+      // Able was I ere I saw Elba. » ; « J'étais puissant avant de voir l'île d'Elbe. » (dixit Napoléon)
+      //A man, a plan, a canal: Panama
+      //Rail at a liar
+
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

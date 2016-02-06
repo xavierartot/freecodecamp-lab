@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Seek And Destroy</title>
+    <script type="text/javascript" charset="utf-8">
+
+      function destroyer(arr) {
+        var a,b,c; 
+        //var odd = arr.filter(
+          //function filterDynamic(n) {
+            //a =  arguments.length === 1?[arguments[0]]:Array.apply(null, arguments);
+            //for (var i = 0, len = a.length; i < len; i++) {
+              //console.log(a[i]);
+              //return n != a[i] && n != b[i] && n != c[i];
+            //}
+          //}
+        //);
+        a =arguments[1];
+        b =arguments[2];
+        c =arguments[3];
+        var odd = arr.filter(
+          function leFiltre(n) {
+             return n != a && n != b && n != c;
+          }
+        );
+        console.log(odd);
+        return odd;
+      }
+
+//destroyer([1, 2, 3, 1], 2, 3) //should return [1, 1].
+//destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3) //should return [1, 5, 1].
+destroyer([3, 5, 1, 2, 2], 2, 3, 5) //should return [1].
+//destroyer([2, 3, 2, 3], 2, 3) //should return [].
+//destroyer(["tree", "hamburger", 53], "tree", 53) //should return ["hamburger"].
+
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Where I Belong</title>
+    <script type="text/javascript" charset="utf-8">
+      function where(arr, num) {
+        var tab=[], a, b, l, r=0;
+        arr.sort(function(a, b) {
+          return a - b;
+        });
+        //console.log(arr);
+        for (var i = 0, len = arr.length; i < len; i++) {
+          //console.log(arr[i] + ' : ' + i + ' : ' + num);
+          if (arr[i] === num) {
+            r = arr.indexOf(num);
+            console.log(r);
+            return arr.indexOf(r);
+          } else if(arr[i] > num && arr[i] !== num){
+            console.log(arr[i] + ' : ' + i);
+            return console.log(r = i);
+          }
+        }
+        return console.log(r);
+      }
+      //where([40, 60], 50);
+      //where([3, 10, 5], 3) //should return 0.
+      //where([2, 5, 10], 15) //should return 3.
+
+      //where([10, 20, 30, 40, 50], 30) //should return 2.
+      //where([5, 3, 20, 3], 5) //should return 2.
+
+      where([10, 20, 30, 40, 50], 35) //should return 3.
+      //where([40, 60], 50) //should return 1.
+      //where([2, 20, 10], 19) //should return 2.
+
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Using the Configurable Attribute</title>
+    <script type="text/javascript" charset="utf-8">
+    'use strict';
+    
+      var cat = {
+        name: {first: 'Fluffy', last: 'Art'},
+        color: "white"
+      };
+
+      //lock done a property to prevent certain attributes to being changed
+      //It also prevents the propery from being deleted from object
+
+      //We want to lock down 'name' with non-configurable
+      Object.defineProperty(cat, 'name', {configurable: false})
+
+      //if I want to change the property 'name' I get an error
+      // ex with enumerable
+      //Object.defineProperty(cat, 'name', {enumerable : false})
+
+      //I try delete and I catch an error
+      //delete(cat.name)
+
+      //But you can modify the attribute
+      cat.name = 'ddd';
+      console.log(cat.name );
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

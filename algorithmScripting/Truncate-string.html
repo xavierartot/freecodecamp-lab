@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Truncate a string</title>
+    <script type="text/javascript" charset="utf-8">
+      function truncate(str, num) {
+        // Clear out that junk in your trunk
+        var etc=3, dots='...';
+        //console.log(num);
+        if (num === 1) {
+          //if (str.match(/[-]+/).length) {
+            //console.log(str = str.slice(0, 1) + dots);
+            ////console.log(str[0] + dots);
+          //} //else {
+            //str.slice(0,2) + dots;
+          //}
+          console.log(str = str.slice(0, 1) + dots);
+
+        } else if(num > 1){
+
+          if (num === 2) {
+            console.log(str = str.slice(0,2) + dots);
+          }else if (num <= 14){
+            console.log(str = str.slice(0, num - 3 ) + dots);
+          }else{
+            console.log(str = str );
+          }
+
+          
+
+        console.log(str);
+        return str;
+      }
+      }
+      //truncate("A-tisket a-tasket A green and yellow basket", 11);
+      //truncate("Absolutely Longer", 2);
+//truncate("Peter Piper picked a peck of pickled peppers", 14);
+//truncate("A-tisket a-tasket A green and yellow basket", 11);
+    truncate("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length);
+
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

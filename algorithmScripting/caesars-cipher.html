@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Caesars Cipher</title>
+    <script type="text/javascript" charset="utf-8">
+    function rot13(str) { // LBH QVQ VG!
+      var r, t=0, total=0, charcode=0, charcode13=0, strTotal='', test='';
+      loopAlpha : for (var j = 0; j < str.length; j++) {
+        r = str[j];
+        charcode = r.charCodeAt();
+        charcode13 = charcode + 13;
+        if(charcode  < 65){
+          // ne remplace les - par les signs ?!.,space 
+          strTotal += str[j];
+
+        }else if (charcode13 > 90) {
+          t = charcode13 - 90;
+          total = t+ 64;
+          strTotal += String.fromCharCode(total);
+        }else {
+          strTotal += String.fromCharCode(charcode13);
+        }
+      }
+      //return console.log(strTotal );
+      return strTotal;
+    }
+      //rot13("SERR PBQR PNZC"); //should decode to "FREE CODE CAMP"
+      //rot13("SERR CVMMN!") //should decode to "FREE PIZZA!"
+      rot13("SERR YBIR?") //should decode to "FREE LOVE?"
+      //rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.") //should decode to "THE QUICK BROWN DOG JUMPED OVER THE LAZY FOX."
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>recursivite</title>
+    <script type="text/javascript" charset="utf-8">
+      function facto(nb) {
+        console.log(nb);
+        //isNaN return a booleen true = is not a number
+        // si nb is not round
+        if (isNaN(nb) || nb < 0 || Math.round(nb) != nb) {
+          trow('Error de valeur : ' + nb + " is not a number positif");
+          return;
+        }
+
+        //termination condition to prevent infinite recursion
+        if (nb === 0) {
+          return 1;
+
+        } else {
+          //why nb is 5,4,3,2,1 and not 5 * 4 = 20 then 20 * 19, et.
+          return nb * facto(nb -1);
+
+        }
+
+      }
+
+      console.log(facto(8));
+
+      //function recu(n) {
+        //var i = 0;
+        ////console.log(n);
+        //if (n === 0) {
+          //return 1;
+        //}
+        ////elseif n is greater than 1
+        //console.log(n);
+        //i = n*recu(n - 1) ;
+        ////console.log('i: ' + i + ' n: ' + n);
+        //return i;
+      //}
+      //console.log(recu(5));
+      //alert(recu(4))
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

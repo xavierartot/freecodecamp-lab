@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Mutations</title>
+    <script type="text/javascript" charset="utf-8">
+      function mutation(arr) {
+        var valueOne=[], valueTwo=[], flag;
+        valueOne = arr[0].toLowerCase();
+        valueTwo = arr[1].toLowerCase();
+        flag = true;
+        for (var i = 0, len = valueTwo.length; i < len; i++) {
+          if(valueOne.indexOf(valueTwo[i]) != -1){
+            console.log(flag);
+          }else{
+            console.log(flag = false);
+          }
+            
+        }
+        return flag;
+      };
+
+      //console.log("hey".indexOf('y'));
+//mutation(["hello", "hey"]); //false
+//mutation(["hello", "hey"]) //should return false.
+//mutation(["hello", "hello"]) //should return true.
+//mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]) //should return true.
+//mutation(["mary", "aarmy"]) //should return true.
+//mutation(["alien", "line"]) //should return true.
+//mutation(["floor", "for"]) //should return true.
+mutation(["hello", "neo"]) //should return false.
+
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

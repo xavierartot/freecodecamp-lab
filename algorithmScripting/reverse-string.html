@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Reverse a String</title>
+    <script type="text/javascript" charset="utf-8">
+
+      function reverseString(str) {
+        //init
+        var reversetab= [], reverse;
+
+        //transforme en tableau
+        for (var i = 0, len = str.length; i < len; i++) {
+          console.log(str[i]);
+          console.log(reversetab.push(str[i])); 
+
+        }
+        //reverse
+        console.log(reversetab.reverse());
+         
+        //join the tab in the string
+        reverse = reversetab.join('');
+        console.log(reverse);
+        return reverse;
+      }
+
+      reverseString("hello Xavier");
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

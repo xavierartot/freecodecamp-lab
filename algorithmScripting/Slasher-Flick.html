@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Slasher Flick</title>
+    <script type="text/javascript" charset="utf-8">
+    // how use splice in this BF ?
+      function slasher(arr, howMany) {
+        // it doesn't always pay to be first
+        for (var i = 0, len = arr.length; i < len; i++) {
+          if (len >= howMany && howMany !== 0) {
+            arr= [len];
+            return console.log(arr);
+          }else if(howMany === 0){
+            //console.log(arr[i]);
+            console.log('return: ' + arr );
+            return arr;
+          }else if(len < howMany){
+          //console.log(arr.splice(howMany, ));
+            arr = [];
+            console.log("value");
+            console.log(arr);
+            return arr;
+          }else{}
+        }
+        return arr;
+      }
+
+      //use splice
+//slasher([1, 2, 3], 2); //should return [3].
+//slasher([1, 2, 3], 0); //should return [1, 2, 3]
+slasher([1, 2, 3], 9); //should return [].
+//slasher([1, 2, 3], 4); //should return [].
+
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

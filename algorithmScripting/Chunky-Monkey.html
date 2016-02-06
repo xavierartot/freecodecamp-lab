@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Chunky Monkey</title>
+    <script type="text/javascript" charset="utf-8">
+
+      function chunk(arr, size) {
+        // Break it up.
+        var  
+          arrLeft=[], 
+          count=0;
+
+        //console.log(arr.length);
+
+        while(count < arr.length){
+          console.log('count = ' + count + ' (count + size) = ' + (count + size )  + ' size = ' + size );
+          console.log( arrLeft.push( arr.slice( count, count += size ) ) );
+        }
+
+        //for (count = 0, len = arr.length; count < len; count++) {
+          //console.log('count = ' + count + ' (count + size) = ' + (count + size )  + ' size = ' + size );
+          //console.log(arrLeft.push( arr.slice(count, count += size) ) );
+        //}
+
+        //for (var i = 0, len = arr.length; i < len; i++) {
+          //count = count + 4;
+          //console.log(count);
+
+        //}
+
+        
+        console.log(arrLeft );
+        //return arr;
+      }
+
+      chunk(["a", "b", "c", "d", 'e', 'f', 'c'], 4);
+
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

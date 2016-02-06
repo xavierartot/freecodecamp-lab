@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>json 'record collection</title>
+    <script type="text/javascript" charset="utf-8">
+      //Count Backwards With a For Loop
+      var ourArray = [];
+      for (var i = 10; i > 0; i -= 2) {
+        ourArray.push(i);
+        //ourArray will now contain [10,8,6,4,2].
+      }
+      var myArray = [];
+      for(var j = 9; j > 0; j -= 2){
+        myArray.push(j);
+        //myArray should equal [9,7,5,3,1].
+      }
+
+
+      //Iterate Through an Array with a For Loop
+      var ourArr = [ 9, 10, 11, 12];
+      var ourTotal = 0;
+      for (var i = 0; i < ourArr.length; i++) {
+        //ourTotal += ourArr[i];
+      }
+      //console.log(ourTotal);
+
+
+      // Setup
+      //trouve le total d'un tableau indexer
+      var myArr = [ 2, 3, 4, 5, 6], total=0;
+      for(var j = 0; j< myArr.length; j++){
+        //total += myArr[j];
+      }
+
+      //nested for loop
+      var arr = [
+        [1,2], [3,4], [5,6]
+      ];
+      for (var i=0; i < arr.length; i++) {
+        for (var j=0; j < arr[i].length; j++) {
+            //console.log(arr[i][j]);
+          }
+      }
+
+      //nesting for loop
+      //Instructions
+      //Modify function multiplyAll so that it multiplies the product variable by each number in the sub-arrays of arr
+      function multiplyAll(arr) {
+        var product = 1;
+        // Only change code below this line
+        for(var i=0; i < arr.length; i++){
+            console.log(arr[i]);
+            
+          for(var j=0; j < arr[i].length; j++ ){
+            //product *= arr[i][j];
+            console.log(arr[i][j]); 
+          }
+        }
+        // Only change code above this line
+        return product;
+      }
+
+      // Modify values below to test your code
+      //multiplyAll([[1],[2],[3]]);
+      multiplyAll([[9,4],[3,4],[5,6,7]]);
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

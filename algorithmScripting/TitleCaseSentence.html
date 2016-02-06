@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Title Case a Sentence</title>
+    <script type="text/javascript" charset="utf-8">
+      function titleCase(str) {
+        var word, i, j, arrayWord=[], wordUppercase='';
+        str = str.toLowerCase();
+        word = str.split(' ');
+        console.log(word);
+
+        for ( i = 0, len = word.length; i < len; i++) {
+          
+          //console.log(word[i].charAt(0).toUpperCase());
+          arrayWord.push(word[i].split(' '));
+        }
+        for (j = 0, len = word.length; j < len; j++) {
+          wordUppercase += word[j].charAt(0).toUpperCase() + word[j].substr(1)+ ' ';
+        }
+
+        console.log(wordUppercase);
+        return wordUppercase.trim();
+
+      }
+
+      titleCase("I'm a little tea pot");
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>
