@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Creating prototypal with classes</title>
+    <script type="text/javascript" charset="utf-8">
+      'use strict';
+      class Animal {
+        constructor(voice){
+          this.voice = voice || 'grunt';
+        }
+        speak() {
+          console.log(this.voice);
+          return this.voice;
+          
+        }
+      }
+
+      class Cat extends Animal{
+        constructor(name, color){
+          super('meow') // call animal's constructor
+          this.name = name
+          this.color = color
+        }
+      }
+    
+      var chihaha = new Cat('Frida', 'beige');
+      chihaha.speak();// meow
+
+      console.log(chihaha ); // Animal {voice: "meow", name: "Frida", color: "beige"}
+      console.log(chihaha.constructor );
+      //return :
+      //function class Cat extends Animal{
+              //constructor(name, color){
+                        //super('meow') // call animal's constructor
+                        //this.name = name
+                        //this.color = color
+                      //}
+            //}
+      
+
+
+
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

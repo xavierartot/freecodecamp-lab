@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>what's a prototype</title>
+    <script type="text/javascript" charset="utf-8">
+      //a Prototype is an object that exist in every function in Javascript
+      //if I create a new function like this, notice that it has a prototype 
+      //property.
+      //And is just an empty object. 
+      var myFunction = function () {};
+      console.log(myFunction ); // return function () {}
+
+      //Object, however, do not have a prototype property
+      //So if I create a new object and try to view its prototype property,
+      //that is undefined
+      var cat = {
+        color: 'blue', 
+        cri: "meeehoo"
+      };
+      console.log(cat.prototype); // return undefined
+
+      //however, Object have a prototype name __proto__ 
+      console.log(cat.__proto__); //return Object {}
+
+     //A function's prototype is the object instance
+     //that will become the prototype of all objects created using this function
+     //as a constructor
+     //
+     //An object's prototype is the object instance from which the object
+     //is inherited
+     function Dog(name, color) {
+       this.name = name
+       this.color = color
+     }
+     var chihaha = new Dog('Frida', 'beige');
+
+     console.log(Dog.prototype);     // returm Dog {}
+     console.log(chihaha.__proto__); // returm Dog {}
+     console.log(Dog.__proto__);     //return function () {}
+     //the both have the same instance
+     console.log(Dog.prototype === chihaha.__proto__); // return true
+     console.log(Dog.__proto__ === chihaha.__proto__); // return false because 
+     // Dog is a function so we have to use Dog.prototype to got it
+
+     //let's change the dog prototype function and afect all object
+     // constructed using that function.
+     Dog.prototype.age = 2
+     Dog.prototype.name = 'toto'
+     // all the new instance herited from those change
+     console.log(Dog.prototype);     // return Dog {ag: 2, name: 'toto'}
+     console.log(chihaha.__proto__); // return Dog {ag: 2, name: 'toto'}
+
+
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

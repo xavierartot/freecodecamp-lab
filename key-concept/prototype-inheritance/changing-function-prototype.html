@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Changing Function Prototype</title>
+    <script type="text/javascript" charset="utf-8">
+      
+      function Dog(name, color) {
+        this.name = name
+        this.color = color
+      }
+      Dog.prototype.age = 8;
+      var chihaha = new Dog('Frida', 'beige');
+      var muffin = new Dog('Muf', 'red');
+
+      //But what if we actualy change the function's prototype to point to a
+        //completely different object
+
+
+
+      //if I create a new dog after having changed the function's Prototype,
+      //notice that I create a new prototype.age and is live only for snowbell
+      Dog.prototype = { age: 2 }
+
+      var snowBell = new Dog('snowBell', 'blue'); 
+        
+      console.log(chihaha.age);// 8 
+      console.log(muffin.age); // 8 
+
+      console.log(snowBell.age);//2
+      //let's look at the function prototype we can see it does have an age of 2
+      console.log(Dog.prototype.age ); //2
+
+      //the prototype are objects that live in memory.
+
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>

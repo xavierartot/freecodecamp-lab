@@ -8,14 +8,31 @@
       'use strict';
       //when use prototype
       var arr = ['red', 'blue', 'green'];
+      var arr2 = ['big', 'small'];
+      
       //if I want the last value of this array:
-      var last = arr[arr.length - 1];
-     //console.log(last);
-     arr.prototype.lastVal = function() {
-       return arr[arr.length - 1];
-     };
-     console.log(arr.lastVal());
+      //var last = arr[arr.length - 1];
+
+     Object.defineProperty(
+       Array.prototype,
+       'last',
+       {
+         get : function () {
+           return this[this.length - 1];
+         },
+         set : function (value) {
+           return this.push(value);
+           // setter code
+         }
+       }
+     )
      
+     console.log(arr.last);            // return green
+     console.log(arr.last = 'yellow'); // return yellow
+     console.log(arr2.last);           // return small 
+
+     console.log(Array);     // return function Array() { [native code] }
+
     </script>
   </head>
   <body>

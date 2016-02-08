@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Creating your own prototypal inheritance chains</title>
+    <script type="text/javascript" charset="utf-8">
+      'use strict';
+      function Animal(voice) {
+        this.voice = voice || 'grunt';
+      }
+      //add the method speak in the prototype of Animal 
+      Animal.prototype.speak = function() {
+        console.log(this.voice);
+      }
+    
+      function Cat(name, color) {
+        Animal.call(this, 'meow') // here with add meow instead grunt
+        this.name = name
+        this.color = color
+      }
+
+      //Now we need to assign Animal as the prototype for the Cat function 
+      Cat.prototype = Object.create(Animal.prototype)
+      //but we want the assign the constructor at Cat and not Animal:
+      Cat.prototype.constructor = Cat
+
+      var chihaha = new Cat('Frida', 'beige');
+
+      //let's make chihaha speak
+      chihaha.speak();
+
+      //the speak function is not a member of cat, so hasOwnProperty would return
+      //false 
+      console.log(Cat.hasOwnProperty('speak')); // false
+      //But it is a member of prototype Animal. 
+      //Now you wondering why we use 
+      //Object.create here instead of just using New.
+      //The big difference is that Object.create is not going to call the Animal
+      //function, it's just going to set that function as the prototype and set up
+      //the prototype chain.
+      //if we call New. It would actually execute the Animal function
+      //and we probably don't want to do that just while we're setting up our 
+      //Cat function
+      //We don't really want to call that until we're creating instances of cats
+      //so that leads us to the thing we need to do. We do need to call our Animal
+      //constructor from our Cat constructor. This way if anything needs to happen
+      // to initialize an Animal upon construction, it will be taken care of.
+      // We just do that like this. So that will call the Animal function passing
+      // in : 
+      //Animal.Call(this)
+      
+      console.log(chihaha ); // Cat {voice: "meow", name: "Frida", color: "beige"}
+      console.log(chihaha instanceof Cat);     // true  
+      console.log(chihaha instanceof Animal ); // true 
+      console.log(chihaha.__proto__); // Object {}
+      console.log(chihaha.__proto__.__proto__); // Animal{}
+
+      //the three line important here are:
+      //Animal.call(this, 'meow') 
+      //Cat.prototype = Object.create(Animal.prototype)
+      //Cat.prototype.constructor = Cat
+
+
+
+
+    </script>
+  </head>
+  <body>
+    body
+  </body>
+</html>
