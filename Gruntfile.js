@@ -162,6 +162,9 @@ module.exports = function(grunt) {
           //'assets/css/main.css',
           //'assets/js/scripts.js',
           '*.html',
+          '*/*.html',
+          '*/*.css',
+          '*/*.js',
           '**/*.html'
         ]
       }
