@@ -3,32 +3,28 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Reverse a String</title>
+    <title>reverse a string</title>
     <script type="text/javascript" charset="utf-8">
-
       function reverseString(str) {
         //init
-        var reversetab= [], reverse;
-
-        //transforme en tableau
+        var reversetab= [], reverseString;
+        //transform a string in an array
         for (var i = 0, len = str.length; i < len; i++) {
-          console.log(str[i]);
+          //add each letter in the new tab
           console.log(reversetab.push(str[i])); 
-
         }
-        //reverse
+        //reverse the tab
         console.log(reversetab.reverse());
          
-        //join the tab in the string
-        reverse = reversetab.join('');
-        console.log(reverse);
-        return reverse;
+        //join the tab
+        reverseString = reversetab.join('');
+        console.log(reverseString);
+        return reverseString;
       }
-
-      reverseString("hello Xavier");
+      reverseString("bill");
     </script>
   </head>
   <body>
-    body
+   Bill
   </body>
 </html>

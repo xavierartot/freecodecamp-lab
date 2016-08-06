@@ -1,0 +1,43 @@
+
+/////////////////////////////////
+// Mixins and Functions        //
+/////////////////////////////////
+
+// ## Includes standard text styling properties.
+// $size: (required) Required font size in pixels
+// $line: (required) Required line height in pixels
+// $family (optional) Font family stack string
+@mixin text($size, $line, $margin: 0, $family: $text__family-sans, $color: $color__primary, $weight: normal) {
+    font-size: calc-em($size);
+    line-height: ($line/$size);
+    font-family: $family;
+    font-weight: $weight;
+    color: $color;
+    margin-bottom: calc-em($margin, $size);
+}
+h1 {
+  color: $color__primary;
+  font-size: em(36);
+  font-family: arial, sans-serif;
+  margin-bottom: em(10, 40);
+  bottom: 333px;
+}
+h2  {
+  font-size: em(24);
+  font-family: arial, sans-serif;
+  margin-bottom: em(15, 40);
+  color: $color__primary--dark;
+}
+h3  {
+  font-size: em(24);
+  font-family: arial; 
+  font-weight: bold; 
+  font-family: arial, sans-serif;
+  margin-bottom: em(15, 40);
+} 
+
+
+
+
+
+

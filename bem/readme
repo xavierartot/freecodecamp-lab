@@ -1,0 +1,14 @@
+source https://www.youtube.com/watch?v=WH4U4K5W8N8&feature=youtu.be
+http://mathayward.com/modular-css-with-sass-and-bem/
+https://github.com/mathaywarduk/simple-sass-framework
+
+create a watcher with Sass
+md assets/sass/
+sass --watch assets/sass:static/css
+
+//a file create with a undurscore, sass don't compile it
+
+
+functionn em() in sass
+https://css-tricks.com/snippets/sass/px-to-em-functions/
+http://erskinedesign.com/blog/calculating-ems-scss/
