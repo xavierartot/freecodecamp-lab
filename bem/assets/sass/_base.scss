@@ -1,11 +1,18 @@
-$color__primary--light: #dd0000 !default;
-$color__primary: #ff0000 !default;
-$color__primary--dark: #900 !default;
+/////////////////////////////////////////////////////
+//                                                 //              
+//    $color__primary--light: #dd0000 !default;    //   
+//    $color__primary: #ff0000 !default;           //
+//    $color__primary--dark: #900 !default;        //
+//                                                 //            
+/////////////////////////////////////////////////////
 
 $base__font-size: 15 !default;
 $base__line: 20 !default;
 
-// convert pixel to em
+// ## Calculates em size based on required pixel size and context.
+// $target: (required) Required pixel size
+// $context: (optional) Current font size used to calculate em value
+// Returns: Em value
 @function em($px, $base: $base__font-size ) {
   @return ($px / $base) * 1em;
 }
